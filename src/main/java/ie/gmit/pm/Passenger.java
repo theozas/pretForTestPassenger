@@ -1,5 +1,7 @@
 package ie.gmit.pm;
 
+
+//chose maven and chose clean run it and then package and run again comit to git and u ok
 public class Passenger {
 
     private String title;

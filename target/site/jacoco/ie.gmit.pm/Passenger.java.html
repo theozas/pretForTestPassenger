@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Passenger.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">passenger</a> &gt; <a href="index.source.html" class="el_package">ie.gmit.pm</a> &gt; <span class="el_source">Passenger.java</span></div><h1>Passenger.java</h1><pre class="source lang-java linenums">package ie.gmit.pm;
+
+public class Passenger {
+
+    private String title;
+    private String name;
+    private String passengerId;
+    private int phone;
+    private int age;
+
+<span class="fc" id="L11">    public Passenger(String title, String name, String id, int phone, int age) {</span>
+<span class="fc" id="L12">        setTitle(title);</span>
+<span class="fc" id="L13">        setName(name);</span>
+<span class="fc" id="L14">        setPassengerId(id);</span>
+<span class="fc" id="L15">        setPhone(phone);</span>
+<span class="fc" id="L16">        setAge(age);</span>
+<span class="fc" id="L17">    }</span>
+
+    public void setTitle(String title) {
+<span class="pc bpc" id="L20" title="1 of 4 branches missed.">        if(title.equalsIgnoreCase(&quot;mr&quot;) || title.equalsIgnoreCase(&quot;mrs&quot;) ||</span>
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">                title.equalsIgnoreCase(&quot;ms&quot;)) {</span>
+<span class="fc" id="L22">            this.title = title;</span>
+        }else{
+<span class="fc" id="L24">            throw new IllegalArgumentException(&quot;Passenger title is invalid&quot;);</span>
+        }
+<span class="fc" id="L26">    }</span>
+
+    public void setName(String name) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if(name.length() &gt;= 3) {</span>
+<span class="fc" id="L30">            this.name = name;</span>
+        }else{
+<span class="fc" id="L32">            throw new IllegalArgumentException(&quot;Passenger name is invalid&quot;);</span>
+        }
+<span class="fc" id="L34">    }</span>
+
+    public void setPassengerId(String passengerId) {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if(passengerId.length() &gt;= 10) {</span>
+<span class="fc" id="L38">            this.passengerId = passengerId;</span>
+        }else{
+<span class="fc" id="L40">            throw new IllegalArgumentException(&quot;Passenger id not valid&quot;);</span>
+        }
+<span class="fc" id="L42">    }</span>
+
+    public void setPhone(int phone) {
+<span class="fc" id="L45">        int numberCount = String.valueOf(phone).length();</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if(numberCount &gt;= 10) {</span>
+<span class="fc" id="L47">            this.phone = phone;</span>
+        }else{
+<span class="fc" id="L49">            throw new IllegalArgumentException(&quot;Phone number incorrect&quot;);</span>
+        }
+<span class="fc" id="L51">    }</span>
+
+    public void setAge(int age) {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if(age &gt; 16) {</span>
+<span class="fc" id="L55">            this.age = age;</span>
+        }else{
+<span class="fc" id="L57">            throw new IllegalArgumentException(&quot;Passenger under valid age&quot;);</span>
+        }
+<span class="fc" id="L59">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L62">        return title;</span>
+    }
+
+    public String getName() {
+<span class="fc" id="L66">        return name;</span>
+    }
+
+    public String getPassengerId() {
+<span class="fc" id="L70">        return passengerId;</span>
+    }
+
+    public int getPhone() {
+<span class="fc" id="L74">        return phone;</span>
+    }
+
+    public int getAge() {
+<span class="fc" id="L78">        return age;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
